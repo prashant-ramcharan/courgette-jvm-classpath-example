@@ -30,7 +30,7 @@ This will reduce the class path for the project and _should_ workaround the Wind
 
 3. Courgette will then use the JARs in the directory above to build a custom class path before running the Cucumber tests.
 
-````
+````java
 @CourgetteOptions(
       ...  
       classPath = { "path-to-project-jars", "path-to-test-classes" },
@@ -44,7 +44,7 @@ This will reduce the class path for the project and _should_ workaround the Wind
 
 Run the following Gradle task in the `courgette-jvm-gradle` project:
 
-````gradle
+````
  gradle runTest
 ````
 
@@ -55,7 +55,7 @@ This task will copy the project dependencies to the `build\libs` directory and t
 
 Run the following Maven goal in the `courgette-jvm-maven` project:
 
-````maven
+````
  mvn test
 ````
 
