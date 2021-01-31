@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'io.github.prashant-ramcharan:courgette-jvm:5.9.2'
+}
+
+tasks.withType(Test) {
+    systemProperties = System.getProperties()
+}
+
+task copyLibs(type: Copy) {
+    into 'build/libs';
+    from configurations.testRuntime
+}
+
+task runTest(type: Test, dependsOn: copyLibs) {
+    include '**/runners/CourgetteRunner.class'
+    outputs.upToDateWhen { false }
+}
