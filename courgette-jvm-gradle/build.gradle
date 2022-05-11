@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    testCompile 'io.github.prashant-ramcharan:courgette-jvm:5.9.2'
+    testCompile 'io.github.prashant-ramcharan:courgette-jvm:6.4.2'
 }
 
 tasks.withType(Test) {
